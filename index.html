@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -33,21 +34,49 @@
         </div>
         <div class="hero-graphic"></div>
     </main>
+
+    <section id="daily-updates" class="daily-updates">
+        <div class="container">
+            <h2><i class="fas fa-satellite-dish"></i> Daily Match Updates</h2>
+            <div id="score-ticker" class="score-ticker">
+                <!-- Live scores will be injected here by JS -->
+            </div>
+        </div>
+    </section>
     
     <section class="featured-analysis">
         <h2><i class="fas fa-bolt"></i> Featured Analysis: The Latest Breakdown</h2>
-        <div class="feature-card">
-            <span class="category-tag">Tactical Breakdown</span>
-            <h3>The Inverted Full-Back: How Xavi Uses Rotation to Break the Low Block</h3>
-            <p>A deep dive into the recent El Clásico, breaking down the intricate passing networks and off-ball movement that dictated midfield control and created overloads in the half-spaces.</p>
-            <div class="data-points">
-                <span><i class="fas fa-chart-area"></i> xG Chain: 2.8</span>
-                <span><i class="fas fa-compass"></i> Avg. Pass Length: 17.5m</span>
-                <span><i class="fas fa-fire-alt"></i> Pressing Intensity: High</span>
+        <div class="feature-card extended-card">
+            <div class="feature-header">
+                <span class="category-tag">Tactical Breakdown</span>
+                <h3>The Inverted Full-Back: How Xavi Uses Rotation to Break the Low Block</h3>
+                <p>A deep dive into the recent El Clásico, breaking down the intricate passing networks and off-ball movement that dictated midfield control and created overloads in the half-spaces.</p>
             </div>
-            <a href="analysis-detail.html" class="cta-secondary">
-                Read Full Breakdown <i class="fas fa-long-arrow-alt-right"></i>
-            </a>
+
+            <div class="feature-visuals">
+                <div class="feature-image">
+                    <!-- Placeholder for Match Analysis Image -->
+                    <img src="https://placehold.co/600x300/1a1a1a/4CAF50?text=Tactical+Heatmap+Analysis" alt="Tactical Analysis Visual">
+                </div>
+
+                <div class="feature-stats-grid">
+                    <div class="chart-container">
+                        <canvas id="momentumChart"></canvas>
+                    </div>
+                    <div class="stats-table-container">
+                        <h4>Match Metrics</h4>
+                        <table id="match-stats-table" class="stats-table">
+                            <!-- Stats injected by JS -->
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-footer">
+                <a href="analysis-detail.html" class="cta-secondary">
+                    Read Full Breakdown <i class="fas fa-long-arrow-alt-right"></i>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -88,5 +117,6 @@
         <p>&copy; 2025 The Analytical Field. Strategy & Analytics.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>

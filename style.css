@@ -1,141 +1,135 @@
-/* --- Global Styles & Variables --- */
 :root {
-    --color-dark-bg: #10151B;       /* Deep Navy/Black Background */
-    --color-card-bg: #1B2129;       /* Slightly Lighter Card Background */
-    --color-primary-text: #F0F4F8;  /* Off-White Text */
-    --color-accent-blue: #00BFFF;   /* Primary Data/Highlight Color (Deep Sky Blue) */
-    --color-accent-orange: #FF8C00; /* Secondary Energy/CTA Color (Dark Orange) */
-    --color-secondary-text: #A0B0C0;/* Subtle Gray Text */
+    --color-dark-bg: #0A0F14;
+    --color-card-bg: #141A23;
+    --color-primary-text: #FFFFFF;
+    --color-secondary-text: #B0B0B0;
+    --color-accent-blue: #00BFFF;
+    --color-accent-orange: #FF8C00;
     --font-main: 'Inter', sans-serif;
 }
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: var(--font-main);
-    color: var(--color-primary-text);
+    margin: 0;
+    font-family: 'Inter', sans-serif;
     background-color: var(--color-dark-bg);
+    color: var(--color-primary-text);
     line-height: 1.6;
-}
-
-h1, h2, h3 {
-    font-weight: 700;
-}
-
-h2 {
-    font-size: 2.2em;
-    margin-bottom: 40px;
-    color: var(--color-accent-blue);
-    display: flex;
-    align-items: center;
-    gap: 15px;
 }
 
 a {
     text-decoration: none;
-    color: var(--color-accent-blue);
-    transition: color 0.3s, background-color 0.3s, transform 0.3s;
+    transition: color 0.3s;
 }
 
-/* --- Navigation Bar --- */
+h1, h2, h3 {
+    margin: 0 0 15px 0;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2em;
+    color: var(--color-accent-blue);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ---------------------------------------------------------------------- */
+/* --- NAVBAR STYLES --- */
+/* ---------------------------------------------------------------------- */
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 5%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: var(--color-card-bg);
+    border-bottom: 2px solid var(--color-accent-blue);
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
 
 .logo {
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-weight: 700;
     color: var(--color-accent-orange);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo i {
+    color: var(--color-accent-blue);
 }
 
 .navbar nav {
     display: flex;
-    flex-wrap: wrap; /* Ensure navigation wraps on small screens */
-    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
-.navbar a {
+.navbar nav a {
     color: var(--color-secondary-text);
     margin-left: 25px;
-    padding: 8px 0;
     font-weight: 600;
-    position: relative;
-    white-space: nowrap; /* Prevent nav links from breaking */
+    font-size: 1.1em;
+    padding-bottom: 5px;
 }
 
-.navbar a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--color-accent-blue);
-    transform: scaleX(0);
-    transition: transform 0.3s ease-in-out;
+.navbar nav a:hover, .navbar nav a.active {
+    color: var(--color-accent-blue);
+    border-bottom: 2px solid var(--color-accent-orange);
 }
 
-.navbar a:hover, .navbar a.active {
-    color: var(--color-primary-text);
-}
 
-.navbar a:hover::after, .navbar a.active::after {
-    transform: scaleX(1);
-}
+/* ---------------------------------------------------------------------- */
+/* --- BUTTONS & CTA STYLES --- */
+/* ---------------------------------------------------------------------- */
 
-/* --- Primary CTA Button Style --- */
 .cta-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 15px 30px;
+    display: inline-block;
     background-color: var(--color-accent-orange);
     color: var(--color-dark-bg);
-    font-weight: 700;
+    padding: 15px 30px;
     border-radius: 5px;
-    box-shadow: 0 5px 20px rgba(255, 140, 0, 0.4);
+    font-weight: 700;
+    font-size: 1.1em;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 15px rgba(255, 140, 0, 0.4);
 }
 
 .cta-primary:hover {
-    background-color: #FF6600;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 102, 0, 0.6);
+    background-color: #e07b00;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 140, 0, 0.6);
 }
 
 .cta-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    display: inline-block;
+    margin-top: 20px;
     color: var(--color-accent-blue);
     font-weight: 600;
-    padding-bottom: 3px;
-    border-bottom: 2px solid var(--color-accent-blue);
+    font-size: 1.1em;
 }
 
 .cta-secondary:hover {
     color: var(--color-accent-orange);
-    border-bottom-color: var(--color-accent-orange);
-    transform: translateX(5px);
+    text-decoration: underline;
 }
 
-/* --- Footer --- */
+/* ---------------------------------------------------------------------- */
+/* --- FOOTER STYLES --- */
+/* ---------------------------------------------------------------------- */
+
 footer {
-    padding: 20px 5%;
     text-align: center;
-    font-size: 0.9em;
+    padding: 30px;
     color: var(--color-secondary-text);
     background-color: #0A0F14;
     border-top: 1px solid rgba(0, 191, 255, 0.1);
@@ -609,5 +603,216 @@ footer {
     }
     .link-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* --- New Styles for Daily Updates & Featured Analysis --- */
+
+/* Daily Updates Section */
+.daily-updates {
+    background-color: #1a1a1a;
+    padding: 2rem 5%;
+    border-bottom: 1px solid #333;
+}
+
+.daily-updates h2 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.score-ticker {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: #4CAF50 #333;
+}
+
+.score-ticker::-webkit-scrollbar {
+    height: 8px;
+}
+
+.score-ticker::-webkit-scrollbar-track {
+    background: #333;
+    border-radius: 4px;
+}
+
+.score-ticker::-webkit-scrollbar-thumb {
+    background: #4CAF50;
+    border-radius: 4px;
+}
+
+.league-column {
+    min-width: 280px;
+    background: #252525;
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid #333;
+}
+
+.league-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #444;
+}
+
+.league-header h3 {
+    font-size: 1rem;
+    color: #4CAF50;
+    margin: 0;
+    font-weight: 600;
+}
+
+.match-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #333;
+}
+
+.match-card:last-child {
+    border-bottom: none;
+}
+
+.match-teams {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.team-name {
+    color: #eee;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.match-info {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.score {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    background: #333;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+}
+
+.status {
+    font-size: 0.75rem;
+    color: #888;
+}
+
+.status.live {
+    color: #e74c3c;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Featured Analysis Enhanced Layout */
+.extended-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.feature-visuals {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.feature-image img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.feature-stats-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.chart-container {
+    background: #222;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+    height: 250px; /* Fixed height for chart */
+}
+
+.stats-table-container {
+    background: #222;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.stats-table-container h4 {
+    margin: 0 0 1rem 0;
+    color: #4CAF50;
+    font-size: 1rem;
+}
+
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #ddd;
+    font-size: 0.9rem;
+}
+
+.stats-table th {
+    text-align: center;
+    border-bottom: 1px solid #444;
+    padding-bottom: 0.5rem;
+    color: #888;
+}
+
+.stats-table td {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #333;
+}
+
+.stat-label {
+    text-align: center;
+    color: #bbb;
+}
+
+.stat-home, .stat-away {
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+}
+
+.feature-footer {
+    text-align: right;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .feature-visuals {
+        grid-template-columns: 1fr;
+    }
+
+    .league-column {
+        min-width: 80%; /* Cards wider on mobile */
     }
 }
